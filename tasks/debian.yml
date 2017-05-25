@@ -14,7 +14,7 @@
     state: present
 - name: "[docker-ce] add docker repo"
   apt_repository:
-    repo: "deb [arch=amd64] https://download.docker.com/linux/{{ ansible_distribution }} {{ ansible_distribution_release }} stable"
+    repo: "deb [arch=amd64] https://download.docker.com/linux/{{ ansible_distribution|lower }} {{ ansible_distribution_release|lower }} stable"
 - name: "[docker_ce] install docker CE"
   apt:
     name: "docker-ce"
